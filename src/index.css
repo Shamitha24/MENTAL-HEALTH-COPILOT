@@ -1,0 +1,115 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 100% 99%;
+    --foreground: 262 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 262 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 262 25% 20%;
+
+    --primary: 257 84% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 258 33% 54%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 25% 95%;
+    --muted-foreground: 262 15% 50%;
+
+    --accent: 258 33% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 25% 90%;
+    --input: 260 25% 90%;
+    --ring: 257 84% 75%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 262 25% 10%;
+    --foreground: 260 25% 95%;
+
+    --card: 262 25% 12%;
+    --card-foreground: 260 25% 95%;
+
+    --popover: 262 25% 12%;
+    --popover-foreground: 260 25% 95%;
+
+    --primary: 257 84% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 258 33% 54%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 262 25% 20%;
+    --muted-foreground: 260 15% 70%;
+
+    --accent: 258 33% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 262 25% 20%;
+    --input: 262 25% 20%;
+    --ring: 257 84% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-mental-secondary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-mental-primary/70;
+}
+
+@layer components {
+  .mental-gradient-bg {
+    @apply bg-gradient-to-br from-mental-surface via-white to-mental-light;
+  }
+  
+  .mental-card {
+    @apply bg-white rounded-xl border border-mental-light shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+  
+  .mental-button {
+    @apply px-4 py-2 rounded-full bg-mental-primary text-white font-medium transition-all duration-300 
+    hover:bg-mental-secondary active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .mental-input {
+    @apply px-4 py-3 rounded-lg border border-mental-light bg-white focus:outline-none 
+    focus:ring-2 focus:ring-mental-primary/30 transition-all duration-300;
+  }
+}
